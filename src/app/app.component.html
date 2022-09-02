@@ -1,0 +1,24 @@
+<div *ngIf="todoList.length === 0; else else_block">
+  <p>The to do list hasn't been loaded yet.</p>
+</div>
+
+<ng-template #else_block>
+ 
+   <table>
+        <thead>
+           <tr>
+                <th>Task</th>
+                <th>Completed?</th>
+                <th>Priority</th>
+           </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of todoList">
+                <td>{{t.task}}</td>
+                <td>{{t.isFinished}}</td>
+                <td>{{t.priority}}</td>
+           </tr>
+        </tbody>
+   </table>
+
+ </ng-template>
